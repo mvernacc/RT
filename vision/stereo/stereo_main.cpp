@@ -23,7 +23,9 @@ int main(){
         calibCapture( leftCam, rightCam );
     }
     // if needed: calibrate the cameras
-    bool recalibrate = true;
+    printf("Would you like to recalibrate the cameras? (y/n): ");
+    fgets(response, sizeof response, stdin);
+    bool recalibrate = (response[0] == 'y');
     if (recalibrate) {
         vector<string> imageList;
         bool read_ok = readStringList("calib/image_list.xml", imageList);
@@ -40,6 +42,14 @@ int main(){
         cout << "calibrating cameras...";
         StereoCalib(imageList, boardSize, true, true);
     }
+    StereoMatcher sm("calib/intrinsics.yml", "calib/extrinsics.yml");
+    Mat left, right, disp;
+    left = imread("calib/left1.bmp");
+    right = imread("calib/right1.bmp");
+    sm.getDisp(left, right, disp);
+    namedWindow("Disparity");
+    imshow("Disparity", disp);
+    waitKey(-1);
     while(1){
         // grab images from left and right cameras
         // rectify images

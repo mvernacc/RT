@@ -1,0 +1,24 @@
+class StereoMatcher {
+private:
+    StereoSGBM sgbm;
+    StereoBM bm;
+    StereoVar var;
+    Mat M1, D1, M2, D2, R, T, Q;
+
+    int blockSize = 9; // must be odd
+    int blockSize_default = 9;
+    int numberOfDisparities = 80; // must be divisible by 16
+    int numberOfDisparities_default = 80;
+    float scaleFactor = 1.0;
+    float scaleFactor_default = 1.0;
+    enum Algorithm {
+        BM,
+        SGBM,
+        VAR
+    } algorithm;
+public:
+    StereoMatcher(char* intrinsicFileName, char* extrinsicFileName);
+    ~StereoMatcher();
+    int getDisp(Mat leftImage, Mat rightImage, Mat dispImage);
+    void setParams(int blockSize_, int numberOfDisparities_, float scaleFactor_, enum Algorithm algorithm_);
+}

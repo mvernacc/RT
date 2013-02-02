@@ -1,0 +1,6 @@
+    int blockSize = 9; // must be odd
+    int blockSize_default = 9;
+    int numberOfDisparities = 80; // must be divisible by 16
+    int numberOfDisparities_default = 80;
+    float scaleFactor = 1.0;
+    float scaleFactor_default = 1.0;
