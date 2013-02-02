@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<opencv_storage>
+<imagelist>
+  calib/left01.jpg. calib/right01.jpg
+  calib/left02.jpg calib/right02.jpg calib/left03.jpg calib/right03.jpg
+  calib/left04.jpg calib/right04.jpg calib/left05.jpg calib/right05.jpg
+  calib/left06.jpg calib/right06.jpg calib/left07.jpg calib/right07.jpg
+  calib/left08.jpg calib/right08.jpg calib/left09.jpg calib/right09.jpg</imagelist>
+<boardSizeX>9</boardSizeX>
+<boardSizeY>6</boardSizeY>
+</opencv_storage>

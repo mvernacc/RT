@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<opencv_storage>
+<imagelist>
+  calib/left0.bmp calib/right0.bmp calib/left1.bmp calib/right1.bmp
+  calib/left2.bmp calib/right2.bmp calib/left3.bmp calib/right3.bmp
+  calib/left4.bmp calib/right4.bmp calib/left5.bmp calib/right5.bmp
+  calib/left6.bmp calib/right6.bmp calib/left7.bmp calib/right7.bmp
+  calib/left8.bmp calib/right8.bmp calib/left9.bmp calib/right9.bmp
+  calib/left10.bmp calib/right10.bmp calib/left11.bmp calib/right11.bmp
+  calib/left12.bmp calib/right12.bmp calib/left13.bmp calib/right13.bmp</imagelist>
+<boardSizeX>9</boardSizeX>
+<boardSizeY>6</boardSizeY>
+</opencv_storage>

@@ -1,0 +1,8 @@
+ - If I capture form both cameras in immediate succession and both cameras are in two usb ports which are right next to each other (presumably on the same usb hub internally), then the program throws an error saying:
+     " 
+       libv4l2: error turning on stream: No space left on device
+       VIDIOC_STREAMON: No space left on device
+     " 
+The problem is resolved by moving one camera to the usb port on the other side of my laptop.
+--
+
