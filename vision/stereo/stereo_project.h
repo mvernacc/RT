@@ -21,4 +21,29 @@ void calibCapture(VideoCapture, VideoCapture);
 void StereoCalib(const vector<string>& imagelist, Size boardSize, bool useCalibrated, bool showRectified);
 bool readStringList(const string&, vector<string>&);
 
+
+class StereoMatcher {
+private:
+    StereoSGBM sgbm;
+    StereoBM bm;
+    StereoVar var;
+    Mat M1, D1, M2, D2, R, T, Q;
+
+    int blockSize; // must be odd
+    int blockSize_default;
+    int numberOfDisparities; // must be divisible by 16
+    int numberOfDisparities_default;
+    float scaleFactor;
+    float scaleFactor_default;
+    enum Algorithm {
+        BM,
+        SGBM,
+        VAR
+    } algorithm;
+public:
+    StereoMatcher(string intrinsicFileName, string extrinsicFileName);
+    ~StereoMatcher();
+    int getDisp(Mat leftImage, Mat rightImage, Mat &dispImage);
+    void setParams(int blockSize_, int numberOfDisparities_, float scaleFactor_, enum Algorithm algorithm_);
+};
 #endif
