@@ -1,0 +1,34 @@
+#!/bin/bash
+# This script makes the LED glow dimly using PWM on the beaglebone.
+# See: http://processors.wiki.ti.com/index.php/AM335x_PWM_Driver%27s_Guide
+
+# Make sure only root can run our script
+if [[ $EUID -ne 0 ]]; then
+   echo "This script must be run as root"
+   exit 1
+fi
+
+# Set the pins to the correct mode. Uncomment lines for diff. pins
+#echo 6 > /sys/kernel/debug/omap_mux/gpmc_a2 # port 9 pin 14
+#echo 6 > /sys/kernel/debug/omap_mux/gpmc_a3 # port 9 pin 16
+echo 4 > /sys/kernel/debug/omap_mux/gpmc_ad8 # port 8 pin 19
+#echo 4 > /sys/kernel/debug/omap_mux/gpmc_ad9 # port 8 pin 13
+
+# Go to the pin filesystem directory. In this case it's port 8 pin 19
+cd /sys/class/pwm/ehrpwm.2:0
+
+# Request the pin
+echo 1 > request
+
+# Set the parameters.
+echo 0 > duty_percent # Apparently this needs to be done first
+echo 200 > period_freq # 200 Hz
+echo 20 > duty_percent # 20% duty
+
+# Run the pin
+echo 1 > run
+read -p "Press [Enter] to finish script"
+
+# Close out
+echo 0 > run
+echo 0 > request
