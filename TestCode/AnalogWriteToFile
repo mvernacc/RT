@@ -1,0 +1,10 @@
+#!/bin/bash
+# This file reads an analog input. Important pins:
+# port 9 pin 32 - VDD_ADC (1.8V)
+# port 9 pin 34 - GNDA_ADC
+# port 9 pins 33-40 - analog inputs. See manual pg. 59
+#  * note that the pin designations start from 0 while the files start from 1
+
+# The output value is 12-bit, so multiply by 1.8V/4096 to get voltage
+cat /sys/devices/platform/omap/tsc/ain1 # AIN0, port 9 pin 39
+
