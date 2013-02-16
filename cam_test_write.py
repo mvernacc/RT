@@ -2,6 +2,6 @@
 
 import cv2
 
-capture = cv2.VideoCapture()
+capture = cv2.VideoCapture(0)
 discard, image = capture.read()
 cv2.imwrite("cam_capture.jpg", image)
