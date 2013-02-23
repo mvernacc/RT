@@ -5,6 +5,27 @@
 # port 9 pins 33-40 - analog inputs. See manual pg. 59
 #  * note that the pin designations start from 0 while the files start from 1
 
+while true
+do
+
 # The output value is 12-bit, so multiply by 1.8V/4096 to get voltage
 cat /sys/devices/platform/omap/tsc/ain1 # AIN0, port 9 pin 39
+echo -ne "\t"
+cat /sys/devices/platform/omap/tsc/ain2 # AIN0, port 9 pin 39
+echo -ne "\t"
+cat /sys/devices/platform/omap/tsc/ain3 # AIN0, port 9 pin 39
+echo -ne "\t"
+cat /sys/devices/platform/omap/tsc/ain4 # AIN0, port 9 pin 39
+echo -ne "\t"
+cat /sys/devices/platform/omap/tsc/ain5 # AIN0, port 9 pin 39
+echo -ne "\t"
+cat /sys/devices/platform/omap/tsc/ain6 # AIN0, port 9 pin 39
+echo -ne "\t"
+cat /sys/devices/platform/omap/tsc/ain7 # AIN0, port 9 pin 39
+echo -ne "\t"
+cat /sys/devices/platform/omap/tsc/ain8 # AIN0, port 9 pin 39
+echo
 
+sleep 1
+
+done
