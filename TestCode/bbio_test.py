@@ -17,7 +17,7 @@ def setup():
   Serial2.begin(9600)
   
 def loop():
-  global frame
+  global frame, brightness, inc
 
   frame += 1
 
