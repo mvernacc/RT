@@ -46,7 +46,7 @@ def analog_loop():
 def serial_loop():
   global serial_output
 
-  serial_output = max(min(serial_output+randint(-1,1),255),0)
+  serial_output = max(min(serial_output+random.randint(-1,1),255),0)
   Serial2.write(serial_output)
 
 def kill_timer(timer):
