@@ -1,6 +1,7 @@
 # Import PyBBIO library:
 from bbio import *
 import threading
+import random
 
 LED = PWM1A
 POT = AIN5
